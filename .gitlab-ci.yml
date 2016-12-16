@@ -1,0 +1,14 @@
+# The following two secret variables are required for this to work. 
+# GITLAB_ACCESS_KEY: Create one here: https://gitlab.filiosoft.com/profile/personal_access_tokens
+# GITHUB_ACCESS_KEY: Create one here: https://github.com/settings/tokens
+# Change the username if necessary.
+image: filiosoft/git
+
+mirror: 
+  stage: deploy
+  tags:
+    - docker
+  script:
+   - git clone --bare https://nprail:$GITLAB_ACCESS_KEY@gitlab.filiosoft.com/$CI_PROJECT_PATH.git
+   - cd $CI_PROJECT_NAME.git
+   - git push --mirror https://nprail:$GITHUB_ACCESS_KEY@github.com/Filiosoft/$CI_PROJECT_NAME.git
