@@ -1,8 +1,4 @@
 {
-  "name": "scv-cli",
-  "version": "0.0.0",
-  "description": "SetCordovaVersion-CLI",
-  "main": "scv.js",
   "author": {
     "name": "Filiosoft <Team@Filiosoft.com>"
   },
@@ -18,5 +14,14 @@
     "commander": "^2.9.0",
     "fs": "0.0.1-security",
     "xmldom": "^0.1.27"
-  }
+  },
+  "description": "CLI to set the version number of a Cordova app.",
+  "license": "MIT",
+  "main": "scv.js",
+  "name": "scv-cli",
+  "repository": "filiosoft/scv-cli",
+  "scripts": {
+    "test": "echo 'Error: no test specified'"
+  },
+  "version": "0.0.1-alpha.1"
 }
