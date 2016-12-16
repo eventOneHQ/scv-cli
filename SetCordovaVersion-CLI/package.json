@@ -1,0 +1,9 @@
+{
+  "name": "set-cordova-version-cli",
+  "version": "0.0.0",
+  "description": "SetCordovaVersion-CLI",
+  "main": "app.js",
+  "author": {
+    "name": "noah"
+  }
+}
