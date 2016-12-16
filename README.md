@@ -2,7 +2,7 @@
 Command line interface to set the version number of a Apache Cordova application for iOS and Android.
 
 
- #### Usage: scv [options] \<versionnumber> \<buildnumber>
+#### Usage: scv [options] \<versionnumber> \<buildnumber>
 
 ##### Options:
 ```
