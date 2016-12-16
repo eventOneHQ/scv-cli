@@ -5,12 +5,11 @@ node_js:
   - "0.8"
   - "0.10"
   - "0.12"
-  - "io.js"
   - "2"
   - "3"
   - "4"
   - "node"
- before_script:
+before_script:
   - npm install -g
   - wget https://gitlab.filiosoft.com/filiosoft-osp/polr-mobile/raw/master/config.xml
 script: 
