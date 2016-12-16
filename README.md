@@ -2,7 +2,8 @@
 [![Build Status](https://api.travis-ci.org/Filiosoft/scv-cli.svg?branch=master)](http://travis-ci.org/Filiosoft/scv-cli)
 [![NPM Version](http://img.shields.io/npm/v/scv-cli.svg?style=flat)](https://www.npmjs.org/package/scv-cli)
 [![NPM Downloads](https://img.shields.io/npm/dm/scv-cli.svg?style=flat)](https://www.npmjs.org/package/scv-cli)
-
+[![dependencies Status](https://david-dm.org/filiosoft/scv-cli/status.svg)](https://david-dm.org/filiosoft/scv-cli)
+[![Known Vulnerabilities](https://snyk.io/test/github/filiosoft/scv-cli/badge.svg)](https://snyk.io/test/github/filiosoft/scv-cli)
 Command line interface to set the version number of a Apache Cordova application for iOS and Android.
 
 ## Installing

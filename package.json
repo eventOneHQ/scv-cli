@@ -16,12 +16,21 @@
     "xmldom": "^0.1.27"
   },
   "description": "CLI to set the version number of a Cordova app.",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.5.1",
+    "gulp-download": "0.0.1",
+    "run-sequence": "^1.2.2",
+    "shelljs": "^0.7.5"
+  },
   "license": "MIT",
   "main": "scv.js",
   "name": "scv-cli",
   "repository": "filiosoft/scv-cli",
   "scripts": {
-    "test": "echo 'Error: no test specified'"
+    "test": "node node_modules/gulp/bin/gulp test",
+    "prepublish": "gulp bump"
   },
-  "version": "0.0.1-alpha.1"
+  "version": "0.0.5"
 }

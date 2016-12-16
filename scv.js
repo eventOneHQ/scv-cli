@@ -8,8 +8,8 @@ var configfile;
 
 program
     .version('0.0.1')
-    .arguments('<versionnumber>', 'Version number to be set.')
-    .arguments('<buildnumber>', 'Build number to be set.')
+    .arguments('<versionnumber> [number]', 'Version number to be set.')
+    .arguments('<buildnumber> [number]', 'Build number to be set.')
     .option('-c, --config <config>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
     .parse(process.argv);
 
