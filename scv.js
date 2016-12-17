@@ -11,8 +11,8 @@ var configfile;
 
 program
     .version(pkgv)
-    .option('-b, --buildnumber <buildnumber>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
-    .option('-n, --versionnumber <versionnumber>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
+    .option('-b, --buildnumber <buildnumber>', 'Build number to be set. ')
+    .option('-n, --versionnumber <versionnumber>', 'Version number to be set.')
     .option('-c, --config <config>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
     .parse(process.argv);
 

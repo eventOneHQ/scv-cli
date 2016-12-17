@@ -10,24 +10,26 @@ Command line interface to set the version number of a Apache Cordova application
 ## Installing
 
 ```bash
-$ npm install -g ionic
+npm install -g scv-cli
 ```
 
-*Note: For a global install of `-g ionic`, OSX/Linux users may need to prefix the command with `sudo` or can setup [proper file permissions on OSX for npm](http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/) to install without `sudo`.*
+*Note: For a global install of `-g scv-cli`, OSX/Linux users may need to prefix the command with `sudo` or can setup [proper file permissions on OSX for npm](http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/) to install without `sudo`.*
 
 
 ## Usage: 
 ```bash
-scv [options] <versionnumber> <buildnumber>
+scv [options] -n <versionnumber> -b <buildnumber>
 ```
 __Example:__
 
 ```bash
-scv 1.4.5 445
+scv -n 1.4.5 -b 445
 ```
 __Command-line flags/options:__
 ```
--h, --help             Output usage information
--V, --version          Output the version number
--c, --config <config>  Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml
+-h, --help                           output usage information
+-V, --version                        output the version number
+-b, --buildnumber <buildnumber>      Build number to be set.
+-n, --versionnumber <versionnumber>  Version number to be set.
+-c, --config <config>                Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml
 ```
