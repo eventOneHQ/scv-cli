@@ -6,6 +6,8 @@ node_js:
   - "2"
   - "3"
   - "4"
+  - "6"
+  - "7"
   - "node"
 before_script:
   - npm install -g gulp
