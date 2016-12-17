@@ -2,6 +2,7 @@
   "author": {
     "name": "Filiosoft <Team@Filiosoft.com>"
   },
+  "homepage": "https://filiosoft.net/scv-cli",
   "bin": {
     "scv": "scv.js"
   },
