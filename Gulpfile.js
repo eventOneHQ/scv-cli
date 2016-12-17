@@ -16,7 +16,7 @@ gulp.task('bump', function () {
 });
 
 gulp.task('run-test', function () {
-    shell.exec('node scv.js 1.4.5 445').stdout;
+    shell.exec('node scv.js -n 1.4.4 -b 4343 -c ./config.xml').stdout;
 });
 
 gulp.task('test', function (callback) {

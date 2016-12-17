@@ -2,14 +2,17 @@
 var fs = require('fs');
 var program = require('commander');
 var DOMParser = require('xmldom').DOMParser;
+var XMLSerializer = require('xmldom').XMLSerializer;
+var serializer = new XMLSerializer();
 var clc = require('cli-color');
+var pkgv = require('./package.json').version;
 
 var configfile;
 
 program
-    .version('0.0.1')
-    .arguments('<versionnumber> [number]', 'Version number to be set.')
-    .arguments('<buildnumber> [number]', 'Build number to be set.')
+    .version(pkgv)
+    .option('-b, --buildnumber <buildnumber>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
+    .option('-n, --versionnumber <versionnumber>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
     .option('-c, --config <config>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
     .parse(process.argv);
 
@@ -35,6 +38,18 @@ if (fs.existsSync(configfile) && program.versionnumber && program.buildnumber) {
         console.log('Setting version number to', clc.green(doc.documentElement.getAttribute('version')));
         console.log('Setting iOS build number to', clc.green(doc.documentElement.getAttribute('ios-CFBundleVersion')));
         console.log('Setting Android build number to', clc.green(doc.documentElement.getAttribute('android-versionCode')));
+        
+        var writetofile = serializer.serializeToString(doc);
+        //console.log(writetofile); 
+        fs.writeFile('config.xml', writetofile, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+
+            console.log("Saved config.xml!");
+        });
+        //console.log(data);
+
     });
 }
 else {
