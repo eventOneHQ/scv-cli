@@ -5,7 +5,7 @@ var download = require('gulp-download');
 var del = require('del');
 var runSequence = require('run-sequence');
 
-gulp.task('release', function () {
+gulp.task('release', ['bump'], function () {
     shell.exec('npm publish').stdout;
 })
 

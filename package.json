@@ -29,8 +29,7 @@
   "name": "scv-cli",
   "repository": "filiosoft/scv-cli",
   "scripts": {
-    "prepublish": "gulp bump",
     "test": "node node_modules/gulp/bin/gulp test"
   },
-  "version": "0.0.7"
+  "version": "1.0.0"
 }
