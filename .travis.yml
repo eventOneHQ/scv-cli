@@ -14,3 +14,7 @@ before_script:
   - wget https://gitlab.filiosoft.com/filiosoft-osp/polr-mobile/raw/master/config.xml
 script: 
   - gulp test
+after_success:
+  - git clone --bare https://nprail:$GITHUB_ACCESS_KEY@github.com/Filiosoft/scv-cli.git
+  - cd scv-cli.git
+  - git push --mirror https://nprail:$GITLAB_ACCESS_KEY@gitlab.filiosoft.com/filiosoft-osp/scv-cli.git
