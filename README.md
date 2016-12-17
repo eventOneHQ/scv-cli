@@ -1,3 +1,6 @@
+---
+title: SCV-CLI
+---
 # SCV-CLI
 [![Build Status](https://api.travis-ci.org/Filiosoft/scv-cli.svg?branch=master)](http://travis-ci.org/Filiosoft/scv-cli)
 [![NPM Version](https://img.shields.io/npm/v/scv-cli.svg?style=flat)](https://www.npmjs.org/package/scv-cli)
