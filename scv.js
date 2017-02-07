@@ -7,7 +7,6 @@ var XMLSerializer = require('xmldom').XMLSerializer;
 var serializer = new XMLSerializer();
 var clc = require('cli-color');
 var pkgv = require('./package.json').version;
-var logo = '';
 var configfile;
 
 function readModuleFile(path, callback) {
@@ -35,8 +34,7 @@ if (!program.config) {
 
 if (fs.existsSync(configfile) && program.versionnumber && program.buildnumber) {
     readModuleFile('./logo.txt', function (err, text) {
-        logo = text;
-        console.log(logo);
+        console.log(text);
     });
     fs.readFile(configfile, 'utf-8', function (err, data) {
         if (err) {
