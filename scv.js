@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 #!/usr/bin/env node
-=======
-﻿#!/usr/bin/env node
-
->>>>>>> 099c3402a94dc1a070b3b14d930a477535571c30
 var fs = require('fs');
 var program = require('commander');
 var DOMParser = require('xmldom').DOMParser;
