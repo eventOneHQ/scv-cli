@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #!/usr/bin/env node
+=======
+﻿#!/usr/bin/env node
+
+>>>>>>> 099c3402a94dc1a070b3b14d930a477535571c30
 var fs = require('fs');
 var program = require('commander');
 var DOMParser = require('xmldom').DOMParser;
@@ -6,8 +11,17 @@ var XMLSerializer = require('xmldom').XMLSerializer;
 var serializer = new XMLSerializer();
 var clc = require('cli-color');
 var pkgv = require('./package.json').version;
-
 var configfile;
+
+function readModuleFile(path, callback) {
+    try {
+        var filename = require.resolve(path);
+        fs.readFile(filename, 'utf8', callback);
+    } catch (e) {
+        callback(e);
+    }
+}
+
 
 program
     .version(pkgv)
@@ -23,6 +37,9 @@ if (!program.config) {
 }
 
 if (fs.existsSync(configfile) && program.versionnumber && program.buildnumber) {
+    readModuleFile('./logo.txt', function (err, text) {
+        console.log(text);
+    });
     fs.readFile(configfile, 'utf-8', function (err, data) {
         if (err) {
             throw err;
@@ -38,7 +55,7 @@ if (fs.existsSync(configfile) && program.versionnumber && program.buildnumber) {
         console.log('Setting version number to', clc.green(doc.documentElement.getAttribute('version')));
         console.log('Setting iOS build number to', clc.green(doc.documentElement.getAttribute('ios-CFBundleVersion')));
         console.log('Setting Android build number to', clc.green(doc.documentElement.getAttribute('android-versionCode')));
-        
+
         var writetofile = serializer.serializeToString(doc);
         //console.log(writetofile); 
         fs.writeFile('config.xml', writetofile, function (err) {
@@ -48,11 +65,8 @@ if (fs.existsSync(configfile) && program.versionnumber && program.buildnumber) {
 
             console.log("Saved config.xml!");
         });
-        //console.log(data);
-
     });
-}
-else {
+} else {
     if (!fs.existsSync(configfile)) {
         console.log(clc.red(configfile, 'doesn\'t seem to exist. '));
     }
