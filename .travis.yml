@@ -11,7 +11,7 @@ node_js:
   - "node"
 before_script:
   - npm install -g gulp
-  - wget https://gitlab.filiosoft.com/filiosoft-osp/polr-mobile/raw/master/config.xml
+  - wget https://gitlab.filiosoft.com/oss/polr-mobile/raw/master/config.xml
 script: 
   - gulp test
 after_success:
