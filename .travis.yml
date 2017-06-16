@@ -1,10 +1,6 @@
 language: node_js
 sudo: false
-node_js:
-  - "0.10"
-  - "0.12"
-  - "2"
-  - "3"
+node_js
   - "4"
   - "6"
   - "7"
@@ -14,7 +10,3 @@ before_script:
   - wget https://gitlab.filiosoft.com/oss/polr-mobile/raw/master/config.xml
 script: 
   - gulp test
-after_success:
-  - git clone --bare https://nprail:$GITHUB_ACCESS_KEY@github.com/Filiosoft/scv-cli.git
-  - cd scv-cli.git
-  - git push --mirror https://nprail:$GITLAB_ACCESS_KEY@gitlab.filiosoft.com/oss/scv-cli.git
