@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 var fs = require('fs');
 var program = require('commander');
 var DOMParser = require('xmldom').DOMParser;
