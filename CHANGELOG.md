@@ -1,3 +1,5 @@
+## v1.1.1
+- Changed order of parameters.
 ## v1.1.0
 - Now a library as well as a CLI!
 - Updated JavaScript to ES6
