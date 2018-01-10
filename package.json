@@ -1,10 +1,10 @@
 {
   "author": {
-    "name": "Filiosoft <Team@Filiosoft.com>"
+    "name": "Filiosoft Open Source <opensource@filiosoft.com>"
   },
   "homepage": "https://filiosoft.net/scv-cli",
   "bin": {
-    "scv": "scv.js"
+    "scv": "bin/scv.js"
   },
   "bugs": {
     "url": "https://github.com/filiosoft/scv-cli/issues",
@@ -13,24 +13,21 @@
   "dependencies": {
     "cli-color": "^1.1.0",
     "commander": "^2.9.0",
-    "fs": "0.0.1-security",
     "xmldom": "^0.1.27"
   },
   "description": "CLI to set the version number of a Cordova app.",
   "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-bump": "^2.5.1",
-    "gulp-download": "0.0.1",
-    "run-sequence": "^1.2.2",
-    "shelljs": "^0.7.5"
+    "standard": "^10.0.3"
   },
   "license": "MIT",
-  "main": "scv.js",
+  "main": "index.js",
   "name": "scv-cli",
   "repository": "filiosoft/scv-cli",
   "scripts": {
-    "test": "node node_modules/gulp/bin/gulp test"
+    "test": "standard && npm run run-test",
+    "run-test": "node bin/scv.js -n 1.4.4 -b 4343 -c ./config.xml",
+    "download": "wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml",
+    "clean": "rm config.xml"
   },
   "version": "1.0.2"
 }

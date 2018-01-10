@@ -6,7 +6,6 @@ node_js:
   - "7"
   - "node"
 before_script:
-  - npm install -g gulp
-  - wget https://gitlab.filiosoft.com/oss/polr-mobile/raw/master/config.xml
+  - wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml
 script: 
-  - gulp test
+  - yarn test
