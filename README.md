@@ -17,6 +17,8 @@ npm install -g scv-cli
 
 
 ## Usage: 
+
+### Command Line
 ```bash
 scv [options] -n <versionnumber> -b <buildnumber>
 ```
@@ -32,4 +34,17 @@ __Command-line flags/options:__
 -b, --buildnumber <buildnumber>      Build number to be set.
 -n, --versionnumber <versionnumber>  Version number to be set.
 -c, --config <config>                Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml
+```
+
+### Library
+
+__Example:__
+```javascript
+scv(configfile, versionnumber, buildnumber)
+  .then(res => {
+    // do something
+  })
+  .catch(err => {
+    // handle error
+  })
 ```
