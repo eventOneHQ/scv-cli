@@ -12,7 +12,7 @@ program
   .option('-c, --config <config>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
   .parse(process.argv)
 
-scv(program.config, program.versionnumber, program.buildnumber)
+scv(program.versionnumber, program.buildnumber, program.config)
   .then(res => {
     console.log(res)
   })

@@ -42,7 +42,7 @@ __Command-line flags/options:__
 
 __Example:__
 ```javascript
-scv(configfile, versionnumber, buildnumber)
+scv(versionnumber, buildnumber, configfile)
   .then(res => {
     // do something
   })
