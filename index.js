@@ -6,10 +6,8 @@ const XMLSerializer = require('xmldom').XMLSerializer
 const serializer = new XMLSerializer()
 const clc = require('cli-color')
 
-module.exports = (config, versionnumber, buildnumber) => {
+module.exports = (configfile = 'config.xml', versionnumber, buildnumber) => {
   return new Promise((resolve, reject) => {
-    const configfile = config || 'config.xml'
-
     if (fs.existsSync(configfile) && versionnumber && buildnumber) {
       fs.readFile(configfile, 'utf-8', (err, data) => {
         if (err) {
