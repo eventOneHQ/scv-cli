@@ -27,7 +27,9 @@
     "test": "standard && npm run run-test",
     "run-test": "node bin/scv.js -n 1.4.4 -b 4343 -c ./config.xml",
     "download": "wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml",
-    "clean": "rm config.xml"
+    "clean": "rm config.xml",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"  
   },
   "version": "1.0.2"
 }
