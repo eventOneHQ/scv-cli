@@ -1,13 +1,14 @@
-#!/usr/bin/env node
+import fs from 'fs'
+import clc from 'cli-color'
+import xmldom from 'xmldom'
+import XMLSerializer from './node_modules/xmldom/dom'
+const DOMParser = xmldom.DOMParser
+//const XMLSerializer = xmldom.XMLSerializerr
+const serializer = new XMLSerializer.XMLSerializer()
 
-const fs = require('fs')
-const DOMParser = require('xmldom').DOMParser
-const XMLSerializer = require('xmldom').XMLSerializer
-const serializer = new XMLSerializer()
-const clc = require('cli-color')
-
-module.exports = (versionnumber, buildnumber, configfile = 'config.xml') => {
+export const scv = (versionnumber, buildnumber, configfile = 'config.xml') => {
   return new Promise((resolve, reject) => {
+    
     if (fs.existsSync(configfile) && versionnumber && buildnumber) {
       fs.readFile(configfile, 'utf-8', (err, data) => {
         if (err) {

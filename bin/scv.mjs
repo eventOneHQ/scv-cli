@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const program = require('commander')
-const clc = require('cli-color')
-const scv = require('../index')
-const pkgv = require('../package.json').version
+import program from 'commander'
+import clc from 'cli-color'
+import {scv} from '../index'
+import * as pkg from '../package.json'
 
 program
-  .version(pkgv)
+  .version(pkg.version)
   .option('-b, --buildnumber <buildnumber>', 'Build number to be set. ')
   .option('-n, --versionnumber <versionnumber>', 'Version number to be set.')
   .option('-c, --config <config>', 'Location of config.xml. Defaults to ./config.xml. e.g. /path/to/config.xml ')
