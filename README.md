@@ -40,8 +40,22 @@ __Command-line flags/options:__
 
 ### Library
 
-__Example:__
+__CJS Example:__
 ```javascript
+const scv = require('scv-cli')
+
+scv(versionnumber, buildnumber, configfile)
+  .then(res => {
+    // do something
+  })
+  .catch(err => {
+    // handle error
+  })
+```
+__MJS Example:__
+```javascript
+import {scv} from 'scv-cli'
+
 scv(versionnumber, buildnumber, configfile)
   .then(res => {
     // do something

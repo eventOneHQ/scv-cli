@@ -1,7 +1,10 @@
 language: node_js
 node_js:
+  - "lts/*"
   - "node"
 before_script:
   - wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml
 script: 
+  - yarn build
   - yarn test
+cache: yarn
