@@ -2,7 +2,7 @@
   "author": {
     "name": "Filiosoft Open Source <opensource@filiosoft.com>"
   },
-  "homepage": "https://filiosoft.net/scv-cli",
+  "homepage": "https://filiosoft.org/scv-cli",
   "bin": {
     "scv": "./bin/scv.js"
   },
