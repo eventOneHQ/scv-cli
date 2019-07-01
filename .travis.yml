@@ -1,9 +1,34 @@
 language: node_js
 node_js:
-  - "lts/*"
-  - "node"
-before_script:
-  - wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml
-script:
-  - npm run test
-cache: npm
+  - 'node'
+cache:
+  directories:
+    - ~/.npm
+stages:
+  - test
+  - name: release
+    if: branch = master
+jobs:
+  include:
+    - stage: test
+      node_js: lts/*
+      before_script:
+        - wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml
+      script:
+        - npm run test
+        - npm run docs
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GH_TOKEN
+        local-dir: out
+        on:
+          branch: master
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx semantic-release
+notifications:
+  email: false
