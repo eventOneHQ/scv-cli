@@ -23,7 +23,9 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "jsdoc": "^3.6.2",
+    "semantic-release": "^15.13.18"
   },
   "license": "MIT",
   "main": "index",
@@ -34,10 +36,10 @@
     "run-test": "node bin/scv.js -v 1.4.4 -b 4343 -c ./config.xml",
     "download": "wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml",
     "clean": "rm config.xml",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags && npm publish"
+    "semantic-release": "semantic-release",
+    "docs": "jsdoc . README.md"
   },
-  "version": "1.1.1",
+  "version": "0.0.0-development",
   "engines": {
     "node": ">=8.5"
   }
