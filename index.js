@@ -1,10 +1,6 @@
 const fs = require('fs-extra')
 const clc = require('cli-color')
-const xmldom = require('xmldom')
-const XMLSerializer = require('xmldom').XMLSerializer
-
-const DOMParser = xmldom.DOMParser
-const serializer = new XMLSerializer()
+const et = require('elementtree')
 
 /**
  * SCV class
@@ -45,7 +41,6 @@ class SCV {
    * await scv.setVersion('1.4.5', '34')
    */
   async setVersion (versionNumber, buildNumber, configFile = 'config.xml') {
-    console.log(this)
     try {
       await fs.stat(configFile)
     } catch (err) {
@@ -62,21 +57,24 @@ class SCV {
     try {
       const data = await fs.readFile(configFile, 'utf-8')
 
-      const doc = new DOMParser().parseFromString(data, 'application/xml')
+      const doc = et.parse(data)
+      const root = doc.getroot()
+
       this.log(
         `Opening project's config.xml file: ${clc.green(configFile)}`
       )
 
-      doc.documentElement.setAttribute('version', versionNumber)
-      doc.documentElement.setAttribute('ios-CFBundleVersion', buildNumber)
-      doc.documentElement.setAttribute('android-versionCode', buildNumber)
+      root.set('version', versionNumber)
+      root.set('ios-CFBundleVersion', buildNumber)
+      root.set('android-versionCode', buildNumber)
 
       this.log(`Setting version number to ${versionNumber}`)
       this.log(`Setting iOS build number to ${buildNumber}`)
       this.log(`Setting Android build number to ${buildNumber}`)
 
-      const modifiedFile = serializer.serializeToString(doc)
-      await fs.writeFile(configFile, modifiedFile)
+      // Cordova hard codes an indentation of 4 spaces, so we'll follow.
+      const xml = doc.write({ indent: 4 })
+      await fs.writeFile(configFile, xml, { encoding: 'utf8' })
 
       return 'Saved config.xml!'
     } catch (err) {
