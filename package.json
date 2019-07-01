@@ -17,11 +17,7 @@
   },
   "description": "CLI to set the version number of a Cordova app.",
   "devDependencies": {
-    "standard": "^10.0.3",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-dynamic-import-node": "^1.2.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0"
+    "standard": "^10.0.3"
   },
   "license": "MIT",
   "main": "index",
@@ -29,13 +25,11 @@
   "repository": "filiosoft/scv-cli",
   "scripts": {
     "test": "standard && npm run run-test",
-    "run-test": "node --experimental-modules bin/scv.mjs -n 1.4.4 -b 4343 -c ./config.xml",
+    "run-test": "node bin/scv.js -n 1.4.4 -b 4343 -c ./config.xml",
     "download": "wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml",
     "clean": "rm config.xml",
-    "preversion": "npm test && npm run build",
-    "version": "git add **/*.js --force",
-    "postversion": "git push && git push --tags && npm publish",
-    "build": "babel *.mjs **/*.mjs --out-dir ."
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "version": "1.1.1",
   "engines": {

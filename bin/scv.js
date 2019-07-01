@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import program from 'commander'
-import clc from 'cli-color'
-import {scv} from '../index'
-import * as pkg from '../package.json'
+const program = require('commander')
+const clc = require('cli-color')
+const { scv } = require('../index')
+const pkg = require('../package.json')
 
 program
   .version(pkg.version)
