@@ -17,14 +17,19 @@
   },
   "description": "CLI to set the version number of a Cordova app.",
   "devDependencies": {
-    "standard": "^10.0.3"
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0"
   },
   "license": "MIT",
   "main": "index",
   "name": "scv-cli",
   "repository": "eventOneHQ/scv-cli",
   "scripts": {
-    "test": "standard && npm run run-test",
+    "test": "eslint . && npm run run-test",
     "run-test": "node bin/scv.js -n 1.4.4 -b 4343 -c ./config.xml",
     "download": "wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml",
     "clean": "rm config.xml",
