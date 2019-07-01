@@ -31,7 +31,7 @@
   "repository": "eventOneHQ/scv-cli",
   "scripts": {
     "test": "eslint . && npm run run-test",
-    "run-test": "node bin/scv.js -n 1.4.4 -b 4343 -c ./config.xml",
+    "run-test": "node bin/scv.js -v 1.4.4 -b 4343 -c ./config.xml",
     "download": "wget https://raw.githubusercontent.com/Filiosoft/polr-mobile/master/config.xml",
     "clean": "rm config.xml",
     "preversion": "npm test",
