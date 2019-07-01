@@ -1,14 +1,14 @@
 {
   "author": {
-    "name": "Filiosoft Open Source <opensource@filiosoft.com>"
+    "name": "eventOne Labs <opensource@event1.io>"
   },
-  "homepage": "https://filiosoft.org/scv-cli",
+  "homepage": "https://oss.eventone.page/scv-cli",
   "bin": {
     "scv": "./bin/scv.js"
   },
   "bugs": {
-    "url": "https://github.com/filiosoft/scv-cli/issues",
-    "email": "team@filiosoft.com"
+    "url": "https://github.com/eventOneHQ/scv-cli/issues",
+    "email": "team@event1.io"
   },
   "dependencies": {
     "cli-color": "^1.1.0",
@@ -22,7 +22,7 @@
   "license": "MIT",
   "main": "index",
   "name": "scv-cli",
-  "repository": "filiosoft/scv-cli",
+  "repository": "eventOneHQ/scv-cli",
   "scripts": {
     "test": "standard && npm run run-test",
     "run-test": "node bin/scv.js -n 1.4.4 -b 4343 -c ./config.xml",

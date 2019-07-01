@@ -1,9 +1,9 @@
 # SCV-CLI
-[![Build Status](https://api.travis-ci.org/Filiosoft/scv-cli.svg?branch=master)](http://travis-ci.org/Filiosoft/scv-cli)
+[![Build Status](https://api.travis-ci.org/eventOneHQ/scv-cli.svg?branch=master)](http://travis-ci.org/eventOneHQ/scv-cli)
 [![NPM Version](https://img.shields.io/npm/v/scv-cli.svg?style=flat)](https://www.npmjs.org/package/scv-cli)
 [![NPM Downloads](https://img.shields.io/npm/dm/scv-cli.svg?style=flat)](https://www.npmjs.org/package/scv-cli)
-[![dependencies Status](https://david-dm.org/filiosoft/scv-cli/status.svg)](https://david-dm.org/filiosoft/scv-cli)
-[![Known Vulnerabilities](https://snyk.io/test/github/filiosoft/scv-cli/badge.svg)](https://snyk.io/test/github/filiosoft/scv-cli)
+[![dependencies Status](https://david-dm.org/eventOneHQ/scv-cli/status.svg)](https://david-dm.org/eventOneHQ/scv-cli)
+[![Known Vulnerabilities](https://snyk.io/test/github/eventOneHQ/scv-cli/badge.svg)](https://snyk.io/test/github/eventOneHQ/scv-cli)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 
@@ -18,7 +18,7 @@ npm install -g scv-cli
 *Note: For a global install of `-g scv-cli`, OSX/Linux users may need to prefix the command with `sudo` or can setup [proper file permissions on OSX for npm](http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/) to install without `sudo`.*
 
 
-## Usage: 
+## Usage:
 
 ### Command Line
 ```bash
