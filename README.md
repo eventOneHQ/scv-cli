@@ -46,34 +46,25 @@ scv -v 1.4.5 -b 445
 
 ### Library
 
-**CJS Example:**
+**Example:**
 
 ```javascript
-const { SCV } = require('scv-cli');
+// CJS
+const { SCV } = require('scv-cli')
+// or MJS
+import * as SCVClass from 'scv-cli'
+const { SCV } = SCVClass.default
 
-const scv = new SCV(true)
 
-scv(version, build, configFile)
+const scv = new SCV({
+  showLogs: true
+})
+scv
+  .setVersion(version, build, configFile)
   .then(res => {
     // do something
   })
   .catch(err => {
     // handle error
-  });
-```
-
-**MJS Example:**
-
-```javascript
-import { SCV } from 'scv-cli';
-
-const scv = new SCV(true)
-
-scv(version, build, configFile)
-  .then(res => {
-    // do something
   })
-  .catch(err => {
-    // handle error
-  });
 ```
